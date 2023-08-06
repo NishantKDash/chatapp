@@ -1,5 +1,7 @@
 package com.nishant.services;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,6 +12,7 @@ import com.nishant.dtos.UserRegisterRequestDto;
 import com.nishant.exceptions.UserAlreadyExistsException;
 import com.nishant.exceptions.UserDoesNotExistsException;
 import com.nishant.exceptions.WrongUserNameOrPasswordException;
+import com.nishant.models.Chat;
 import com.nishant.models.UserEntity;
 import com.nishant.repository.UserRepository;
 
@@ -51,4 +54,16 @@ public class UserService {
 	     return user;
 		
 	}
+	
+	public List<UserEntity> getUsers()
+	{
+		return userrepo.findAll();
+	}
+	
+	public List<Chat> getChats(String username)
+	{
+		UserEntity user = userrepo.findUserByusername(username);
+		return user.getChats();
+	}
+	
 }

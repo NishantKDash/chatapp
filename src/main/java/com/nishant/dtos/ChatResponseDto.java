@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserLoginResponseDto {
-  
-	private String username;
-	private String token;
+public class ChatResponseDto {
+    
+	
+	private String admin;
+	private Long gid;
+	
 }

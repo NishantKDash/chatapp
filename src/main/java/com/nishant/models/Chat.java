@@ -19,6 +19,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Chat extends BaseModel{
     
+	
+	private String name;
 	@ManyToMany(mappedBy = "chats" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
 	private List<UserEntity> users;
 	

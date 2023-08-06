@@ -2,6 +2,7 @@ package com.nishant.models;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToMany;
@@ -21,7 +22,7 @@ public class UserEntity extends BaseModel{
 	private String username;
 	private String password;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
 	private List<Chat> chats;
 
 }

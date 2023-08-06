@@ -42,7 +42,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 	public final ResponseEntity<Object> handlewrongpassword(Exception ex , WebRequest request)
 	{
 		ErrorDetails error = new ErrorDetails(LocalDateTime.now(), ex.getMessage() , request.getDescription(false));
-		return new ResponseEntity(error , HttpStatus.NOT_FOUND);
+		return new ResponseEntity(error , HttpStatus.FORBIDDEN);
 		
 	}
 
