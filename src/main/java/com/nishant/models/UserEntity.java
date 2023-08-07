@@ -1,5 +1,6 @@
 package com.nishant.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -22,7 +23,7 @@ public class UserEntity extends BaseModel{
 	private String username;
 	private String password;
 	
-	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
-	private List<Chat> chats;
+	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.REMOVE)
+	private List<Chat> chats = new ArrayList<>();
 
 }
