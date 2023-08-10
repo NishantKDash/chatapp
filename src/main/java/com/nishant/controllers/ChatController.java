@@ -32,8 +32,6 @@ public class ChatController {
 		Chat chat =  chatService.getChat(id);
 		dto.setChatName(chat.getName());
 		dto.setId(chat.getId());
-		dto.setParticipants(chat.getUsers().stream().map(user-> user.getUsername()).collect(Collectors.toList()));
-		dto.setMessages(chat.getMessages());
 		return ResponseEntity.ok(dto);
 	}
 	

@@ -14,8 +14,8 @@ public class SocketMessageController {
 	@Autowired
 	private SocketMessageService socketservice;
 	
-	@MessageMapping("/api/socket_message/{id}")
-	@SendTo("/api/chat/${id}")
+	@MessageMapping("/socket_message/{id}")
+	@SendTo("/chat/{id}")
 	public SocketMessage message(@RequestBody SocketMessage message , @DestinationVariable("id") Long gid)
 	{
 		socketservice.saveMessage(message , gid);

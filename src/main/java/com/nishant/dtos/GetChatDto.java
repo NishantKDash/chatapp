@@ -15,6 +15,4 @@ public class GetChatDto {
   
 	private Long id;
 	private String chatName;
-	private List<String> participants;
-	private List<Message> messages;
 }

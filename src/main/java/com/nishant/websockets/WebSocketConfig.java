@@ -12,13 +12,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
    
 	  @Override
 	  public void configureMessageBroker(MessageBrokerRegistry config) {
-	    config.enableSimpleBroker("/api/chat/*");
+	    config.enableSimpleBroker("/chat");
 	    config.setApplicationDestinationPrefixes("/app");
 	  }
 
 	  @Override
 	  public void registerStompEndpoints(StompEndpointRegistry registry) {
-	    registry.addEndpoint("/api/chatapp");
+	    registry.addEndpoint("/chatapp")
+	            .setAllowedOrigins("http://localhost:3000");
 	  }
 	
 }

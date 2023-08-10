@@ -24,8 +24,6 @@ public class Chat extends BaseModel{
 	@ManyToMany(mappedBy = "chats" , fetch = FetchType.EAGER)
 	private List<UserEntity> users;
 	
-	@OneToMany(mappedBy = "chat" , cascade = CascadeType.ALL , fetch = FetchType.EAGER)
-	private List<Message> messages;
 	
 	
 }

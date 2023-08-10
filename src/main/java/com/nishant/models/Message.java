@@ -27,7 +27,7 @@ public class Message extends BaseModel{
 	private String message;
 	
 	private LocalDateTime timestamp;
-	
-	@ManyToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Chat chat;
 }
