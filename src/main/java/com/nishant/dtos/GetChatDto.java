@@ -2,8 +2,6 @@ package com.nishant.dtos;
 
 import java.util.List;
 
-import com.nishant.models.Message;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

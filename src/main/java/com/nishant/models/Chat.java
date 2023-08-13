@@ -25,5 +25,4 @@ public class Chat extends BaseModel{
 	private List<UserEntity> users;
 	
 	
-	
 }

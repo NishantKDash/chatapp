@@ -23,7 +23,7 @@ public class UserEntity extends BaseModel{
 	private String username;
 	private String password;
 	
-	@ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.REMOVE)
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Chat> chats = new ArrayList<>();
 
 }

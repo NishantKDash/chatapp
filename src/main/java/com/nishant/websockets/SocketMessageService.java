@@ -22,7 +22,7 @@ public class SocketMessageService {
 	
 	public void saveMessage(SocketMessage message , Long id)
 	{
-		System.out.println(message.getUsername() + "fkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjf");
+		//System.out.println(message.getUsername() + "fkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjfkdjf");
 		Message saveMessage = new Message();
 		saveMessage.setMessage(message.getMessage());
 		saveMessage.setUser(userRepo.findUserByusername(message.getUsername()));
