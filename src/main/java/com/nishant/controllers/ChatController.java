@@ -1,5 +1,6 @@
 package com.nishant.controllers;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nishant.dtos.ChatRequestDto;
 import com.nishant.dtos.ChatResponseDto;
 import com.nishant.dtos.GetChatDto;
+import com.nishant.dtos.GetUsersForChatDto;
 import com.nishant.models.Chat;
+import com.nishant.models.UserEntity;
 import com.nishant.services.ChatService;
 
 @RestController
@@ -52,5 +55,20 @@ public class ChatController {
 		 return ResponseEntity.ok("The chat has been deleted");
 				 
 	 }
-
+	 
+	 @GetMapping("/users/{id}")
+	 public ResponseEntity<GetUsersForChatDto> getUsers(@PathVariable("id") Long id)
+       {
+	        List<UserEntity> users = chatService.getUsers(id);
+	        List<String> userlist = users.stream()
+	        		.map(user-> user.getUsername())
+	        		.collect(Collectors.toList());
+	        
+	        GetUsersForChatDto dto = new GetUsersForChatDto();
+	        dto.setId(id);
+	        dto.setUsernames(userlist);
+	        
+	       return ResponseEntity.ok(dto);
+       }
 }
+

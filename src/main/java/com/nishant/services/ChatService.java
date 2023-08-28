@@ -79,6 +79,11 @@ public class ChatService {
 		return chatrepo.findById(id).get();
 	}
 	
+	public List<UserEntity> getUsers(Long id)
+	{
+		return chatrepo.findById(id).get().getUsers();
+	}
+	
 
 
 }

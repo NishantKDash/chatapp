@@ -22,7 +22,7 @@ public class WhatsappCloneApplication {
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
-		}
+		}			
 	}
 	
 	
